@@ -1,6 +1,13 @@
 {
-    "image": "your-name/your-image:tag",
+    "image": "takatokinoshita/si_environment:latest",
     "remoteUser": "exp",
     "updateRemoteUserUID": true,
-    "workspaceFolder": "/workspace"
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+    "workspaceFolder": "/workspace",
+    "runArgs": [
+        "--gpus",
+        "all",
+        "--shm-size",
+        "16g" // you may need to adjust this value according to your environment
+    ]
 }
